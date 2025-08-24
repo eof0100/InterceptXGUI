@@ -1,71 +1,101 @@
-# InterceptX GUI
+<h1 style="margin-bottom:0">InterceptX GUI <span style="font-weight:400;">v1.0.0</span></h1>
+<p style="margin-top:4px;color:#666;">Release date: 2025-08-24</p>
 
-<p align="center">
-  <img src="logo.png" alt="InterceptX Logo" width="150"/>
+<hr/>
+
+<h2>Overview</h2>
+<p>
+  <strong>InterceptX GUI</strong> is a Java-based HTTP proxy with a Swing GUI. It intercepts, displays, and forwards HTTP (HTTPS support coming) traffic between your browser and target servers, showing request/response headers and readable bodies in real time.
 </p>
 
-<h2 align="center">Java-Based HTTP Proxy with GUI</h2>
+<div style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:6px;padding:12px;">
+  <p style="margin:0;"><strong>Heads up:</strong> The GitHub-generated “Source code (zip/tar.gz)” asset
+  <em>does not contain Java source code</em>. It only includes the files present in this public repository (e.g., <code>InterceptX.jar</code> and <code>README.md</code>). The source code is private.</p>
+</div>
 
-<p align="center">
-  <b>InterceptX GUI</b> is a Java-based HTTP proxy application with a graphical interface.<br/>
-  It allows users to intercept, view, and analyze HTTP requests and responses between a browser and web servers in real-time.
-</p>
-
----
-
-## ✨ Features
-
+<h2>What’s Included (Assets)</h2>
 <ul>
-  <li>Intercepts HTTP traffic from your browser to any web server (<b>HTTPS not yet supported</b>).</li>
-  <li>Displays full HTTP request and response headers in a GUI.</li>
-  <li>Captures response body:
-    <ul>
-      <li>Text content (HTML, JSON, XML) is displayed directly.</li>
-      <li>Binary content (images, PDF, ZIP, etc.) is summarized with size and MIME type.</li>
-    </ul>
-  </li>
-  <li>Automatically decodes gzip-compressed responses.</li>
-  <li>Start and stop the proxy server directly from the GUI.</li>
-  <li>Logs all activity in a scrollable <code>JTextArea</code> window.</li>
-  <li>Simple port configuration for the proxy (default: <code>8080</code>).</li>
+  <li><strong>InterceptX.jar</strong> — runnable application</li>
+  <li><strong>Source code (zip/tar.gz)</strong> — auto-generated archive of this repo contents (no Java sources)</li>
 </ul>
 
----
+<h2>Highlights</h2>
+<ul>
+  <li>Intercepts browser HTTP requests/responses (multiple concurrent connections)</li>
+  <li>Displays all request/response headers</li>
+  <li>Shows text bodies (HTML/JSON/XML); summarizes binary content only (MIME type &amp; size)</li>
+  <li>Automatic <code>gzip</code> response decoding</li>
+  <li>Start/Stop proxy from the GUI; configurable port (default <code>8080</code>)</li>
+</ul>
 
-## ⚙️ How It Works
+<h2>Requirements</h2>
+<ul>
+  <li>Java 8 or newer (<code>java -version</code>)</li>
+  <li>Network access to target servers</li>
+  <li>Ability to set browser proxy to <code>localhost:&lt;port&gt;</code></li>
+</ul>
 
+<h2>How to Run</h2>
+
+<h3>Windows</h3>
 <ol>
-  <li><b>Start the Proxy:</b> Click the <code>Start Proxy</code> button and specify a port.</li>
-  <li><b>Browser Traffic Interception:</b>
-    <ul>
-      <li>The proxy listens on the specified port.</li>
-      <li>When a browser sends an HTTP request, the proxy receives it.</li>
-    </ul>
+  <li>Download <code>InterceptX.jar</code> from the Assets below.</li>
+  <li>Open <strong>Command Prompt</strong> and change to the download folder:
+    <pre><code>cd C:\Path\To\InterceptXGUI</code></pre>
   </li>
-  <li><b>Forwarding Requests:</b>
-    <ul>
-      <li>The proxy sends the request to the real server.</li>
-      <li>Headers and body are forwarded correctly, including POST/PUT data.</li>
-    </ul>
+  <li>Run:
+    <pre><code>java -jar InterceptX.jar</code></pre>
   </li>
-  <li><b>Handling Responses:</b>
-    <ul>
-      <li>The proxy receives the response from the server.</li>
-      <li>Text-based content is displayed in the GUI.</li>
-      <li>Binary content is logged with size and MIME type.</li>
-      <li>The response is forwarded back to the browser.</li>
-    </ul>
-  </li>
-  <li><b>Stop the Proxy:</b> Click the <code>Stop Proxy</code> button to safely terminate the server thread.</li>
 </ol>
 
----
+<h3>Linux</h3>
+<ol>
+  <li>Download <code>InterceptX.jar</code> from the Assets below.</li>
+  <li>Open a <strong>Terminal</strong> and change to the download folder:
+    <pre><code>cd /path/to/InterceptXGUI</code></pre>
+  </li>
+  <li>Run:
+    <pre><code>java -jar InterceptX.jar</code></pre>
+  </li>
+</ol>
 
-## ▶️ How to Run
+<h3>Configure Your Browser</h3>
+<ol>
+  <li>Set HTTP proxy to <code>localhost</code> and the port you entered in the app (default <code>8080</code>).</li>
+  <li>Browse any site; traffic will appear in the InterceptX GUI window.</li>
+</ol>
 
-1. Download <code>InterceptX.jar</code> from this repository.  
-2. Open a terminal or command prompt.  
-3. Navigate to the folder containing the JAR file:  
+<h2>Notes &amp; Limitations</h2>
+<ul>
+  <li><strong>HTTP only</strong> — HTTPS interception is not yet supported.</li>
+  <li>Large/binary bodies are not dumped into the GUI; they’re summarized (size + MIME).</li>
+  <li>If the chosen port is in use, the app will show an error; pick a different port.</li>
+</ul>
 
-   ```bash
-   cd /path/to/InterceptXGUI
+<h2>Changelog</h2>
+<ul>
+  <li><strong>v1.0.0</strong>
+    <ul>
+      <li>Initial public release of InterceptX GUI</li>
+      <li>Request/response interception with header display</li>
+      <li>Text body rendering + gzip decoding</li>
+      <li>Binary content summary and basic logging</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>Verification</h2>
+<p>Checksum Verification:</p>
+<pre><code>SHA256 (InterceptX.jar): 666E03B45CEC69561F2F90F3AF75A9FD7B40E3E7F60DF0F64ED3CC4C3FE6FE01</code></pre>
+
+<h2>About the Developer</h2>
+<p>
+I am currently a Bachelor’s student in Computer Science at Eastern Washington University (EWU). 
+I created <strong>InterceptX GUI</strong> out of my personal interest in computer security and networking, 
+and as a hands-on project to deepen my understanding of Java, HTTP protocols, and proxy servers. 
+This project is part of my journey to learn practical cybersecurity concepts and improve my programming skills.
+</p>
+
+
+<h2>Feedback</h2>
+<p>This is my basic first release of InterceptX. Next goal is to support HTTPS and be able to intercept and edit request/response on the fly. Report issues or suggestions via the repository’s Issues tab. Thank you. </p>
