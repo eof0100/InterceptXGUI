@@ -1,4 +1,4 @@
-<h1 style="margin-bottom:0">InterceptX GUI <span style="font-weight:400;">v1.0.0</span></h1>
+<h1 style="margin-bottom:0">InterceptX GUI <span style="font-weight:400;">v1.1.0</span></h1>
 <p style="margin-top:4px;color:#666;">Release date: 2025-08-24</p>
 
 <hr/>
@@ -21,11 +21,17 @@
 
 <h2>Highlights</h2>
 <ul>
-  <li>Intercepts browser HTTP requests/responses (multiple concurrent connections)</li>
+  <li>Intercepts browser HTTP (HTTPS not yet supported) requests/responses (multiple concurrent connections)</li>
   <li>Displays all request/response headers</li>
   <li>Shows text bodies (HTML/JSON/XML); summarizes binary content only (MIME type &amp; size)</li>
   <li>Automatic <code>gzip</code> response decoding</li>
   <li>Start/Stop proxy from the GUI; configurable port (default <code>8080</code>)</li>
+</ul>
+
+<h2>What's new in v1.1.0</h2>
+<ul>
+  <li>Able to receive and properly forward traffic to/from server/browser (without interception)</li>
+  <li>HTTPS support coming soon...</li>
 </ul>
 
 <h2>Requirements</h2>
